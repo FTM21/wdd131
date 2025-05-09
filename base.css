@@ -1,13 +1,13 @@
 /* Google Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
 
-/* Base Styles */
+
 :root {
-  --primary-color: #7dc5b1;
+  --primary-color: mediumturquoise;
   --secondary-color: #c0d6df;
   --accent-color: #0b7b72;
   --light-color: #d4e4e2;
-  --dark-color: #293241;
+  --dark-color: black;
   --heading-font: 'Montserrat', sans-serif;
   --body-font: 'Roboto', sans-serif;
 }
@@ -15,33 +15,37 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  padding:0;
+  padding: 0;
 }
 
 body {
-  font-family: var('Roboto', sans-serif);
+  font-family: 'Roboto', sans-serif;
   line-height: 1.6;
-  color: var(#293241);
-  background-color: var(#7dc5b1);
+  color: #293241;
+  background-color: whitesmoke;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* Typography */
+
 h1, h2, h3, h4, h5, h6 {
-  font-family: var('Montserrat', sans-serif);
+  font-family: 'Montserrat', sans-serif;
   margin-bottom: 1rem;
-  color: var(#7dc5b1);
+  color: black;
 }
 
 h1 {
   font-size: 2.2rem;
+  background-color: black;
+  color: whitesmoke;
+  padding: 0.5rem;
+  border-radius: 5px;
 }
 
 h2 {
   font-size: 1.8rem;
-  border-bottom: 2px solid var(#c0d6df);
+  border-bottom: 2px solid black;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
 }
@@ -51,23 +55,23 @@ p {
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
   border-radius: 5px;
   margin-bottom: 1rem;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Header Styles */
+
 header {
-  background-color: var(#7dc5b1);
-  color: white;
+  background-color: turquoise;
+  color: black;
   padding: 1.5rem;
   text-align: center;
 }
 
 header h1 {
-  color: white;
   margin-bottom: 1rem;
 }
 
@@ -78,24 +82,29 @@ nav {
   justify-content: center;
   gap: 1rem;
   margin-top: 1rem;
+  background-color: turquoise;
+  padding: 1rem;
+  border-radius: 5px;
 }
 
 nav a {
-  color: white;
+  color: black;
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.3);
   transition: all 0.3s ease;
+  font-weight: bold;
 }
 
 nav a:hover {
-  background-color: var(#0b7b72);
+  background-color: #0b7b72;
+  color: white;
   transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 3, 0.656);
 }
 
-/* Main Content */
+
 main {
   flex: 1;
   width: 90%;
@@ -108,13 +117,17 @@ main {
   gap: 2rem;
 }
 
-/* Card Styles */
+
 .card {
   background-color: white;
   border-radius: 10px;
   padding: 1.5rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-top: 10px solid turquoise;
 }
 
 .card:hover {
@@ -122,10 +135,10 @@ main {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Footer Styles */
+
 footer {
-  background-color: var(#293241);
-  color: white;
+  background-color: black;
+  color: whitesmoke;
   text-align: center;
   padding: 1.5rem;
   margin-top: 2rem;
@@ -137,7 +150,7 @@ footer p {
 
 #lastModified {
   font-size: 0.9rem;
-  color: var(#c0d6df);
+  color: black;
 }
 
 /* Media Queries for Responsive Design */
