@@ -12,7 +12,7 @@
     <header>
         <h1>Temple Album</h1>
         <nav id="nav">
-            <button id="hamburger">&#9776;</button> <!-- Hamburger Button -->
+            <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
             <ul id="nav-menu">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Old</a></li>
@@ -26,24 +26,40 @@
         <h1>Temple Pictures</h1>
         <div class="grid-container">
             <figure>
-                <img src="images/atlantatemple.jpg" alt="EUA">
-                <figcaption>Atlanta EUA temple</figcaption>
-                <img src="images/argentinatemple11.jpg" alt="Argentina">
+                <img src="images/atlantatemple.jpg" alt="Atlanta EUA temple">
+                <figcaption>Atlanta EUA Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/argentinatemple11.jpg" alt="Argentina Temple">
                 <figcaption>Argentina Temple</figcaption>
-                <img src="images/californiatemple.jpg" alt="California">
-                <figcaption>California temple</figcaption>
-                <img src="images/campinasbraziltemples.jpg" alt="Brazil">
+            </figure>
+            <figure>
+                <img src="images/californiatemple.jpg" alt="California Temple">
+                <figcaption>California Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/campinasbraziltemples.jpg" alt="Campinas Brazil Temple">
                 <figcaption>Campinas Brazil Temple</figcaption>
-                <img src="images/mexicotemple.jpg" alt="Mexico">
-                <figcaption>Mexico temple</figcaption>
-                <img src="images/paraguayasuncion.jpeg" alt="Paraguay">
-                <figcaption>Argentina Temple</figcaption>
-                <img src="images/berntemple.jpg" alt="Switzerland">
-                <figcaption>Bern Switzerland  Temple</figcaption>
-                <img src="images/albertacanadatemple.jpg" alt="Canada">
+            </figure>
+            <figure>
+                <img src="images/mexicotemple.jpg" alt="Mexico Temple">
+                <figcaption>Mexico Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/paraguayasuncion.jpeg" alt="Paraguay Temple">
+                <figcaption>Asunción Paraguay Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/berntemple.jpg" alt="Bern Switzerland Temple">
+                <figcaption>Bern Switzerland Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/albertacanadatemple.jpg" alt="Alberta Canada Temple">
                 <figcaption>Alberta Canada Temple</figcaption>
-                <img src="images/utahtemple.jpg" alt="EUA">
-                <figcaption>Utah EUA  Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/utahtemple.jpg" alt="Utah EUA Temple">
+                <figcaption>Utah EUA Temple</figcaption>
             </figure>
         </div>
     </main>
@@ -51,5 +67,12 @@
         <p>&copy; <span id="current-year"></span> Francisca Maxinho</p>
         <p>Last Modified: <span id="last-modified"></span></p>
     </footer>
+
+    <script>
+      
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        document.getElementById('last-modified').textContent = document.lastModified;
+    </script>
 </body>
 </html>

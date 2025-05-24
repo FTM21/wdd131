@@ -5,8 +5,8 @@ body {
 }
 
 header {
-    background-color: burlywood;
-    color: black;
+    background-color: navy;
+    color: whitesmoke;
     padding: 1em;
     text-align: center;
 }
@@ -20,13 +20,13 @@ nav {
 #nav-menu {
     list-style-type: none;
     padding: 0;
-    display: none; /* Initially hide menu in mobile */
+    display: none; /
 }
 
 #hamburger {
     background: none;
     border: none;
-    color: black;
+    color: whitesmoke;
     font-size: 24px;
     cursor: pointer;
 }
@@ -53,13 +53,13 @@ figure {
         grid-template-columns: repeat(3, 1fr); /* Three columns in larger view */
     }
     nav a {
-        color: white;
+        color: whitesmoke;
         text-decoration: none;
         padding: 10px;
     }
     
     nav a:hover {
-        background-color: #555; /* Change background on hover */
+        background-color: #555; 
     }
 
 
