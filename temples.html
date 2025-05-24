@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Album</title>
+    <link rel="stylesheet" href="styles/temples.css">
+    <link rel="stylesheet" href="styles/temples-large.css">
+    <script src="scripts/temples.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Temple Album</h1>
+        <nav id="nav">
+            <button id="hamburger">&#9776;</button> <!-- Hamburger Button -->
+            <ul id="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Old</a></li>
+                <li><a href="#">New</a></li>
+                <li><a href="#">Large</a></li>
+                <li><a href="#">Small</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Temple Pictures</h1>
+        <div class="grid-container">
+            <figure>
+                <img src="placeholder-image.jpg" alt="Temple Image">
+                <figcaption>Temple Name</figcaption>
+            </figure>
+            <!-- Repeat figure elements for at least 9 temple images -->
+        </div>
+    </main>
+    <footer>
+        <p>&copy; <span id="current-year"></span> Your Name</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
+    </footer>
+</body>
+</html>

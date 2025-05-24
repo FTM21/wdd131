@@ -1,0 +1,66 @@
+body {
+    font-family: 'Your Selected Font', sans-serif; /* Remember to import Google Fonts */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav-menu {
+    list-style-type: none;
+    padding: 0;
+    display: none; /* Initially hide menu in mobile */
+}
+
+#hamburger {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* One column on mobile */
+    gap: 10px;
+    padding: 1em;
+}
+
+/* Additional styles for your figures and captions */
+figure {
+    margin: 0;
+}
+
+/* Use media queries */
+@media (min-width: 768px) {
+    #nav-menu {
+        display: flex; /* Show menu in larger screens */
+    }
+    
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* Three columns in larger view */
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+    }
+    
+    nav a:hover {
+        background-color: #555; /* Change background on hover */
+    }
+
+
+}
