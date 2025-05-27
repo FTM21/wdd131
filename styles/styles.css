@@ -1,6 +1,6 @@
 :root {
-    --primary-color: mediumturquoise; 
-    --secondary-color: #c0d6df;      
+    --primary-color: rgb(55, 185, 181); 
+    --secondary-color: whitesmoke;      
     --accent-color: #0b7b72;           
     --light-color: #d4e4e2;            
     --dark-color: black;                
@@ -12,13 +12,13 @@ body {
     font-family: var('Roboto', sans-serif);
     margin: 0;
     padding: 0;
-    background-color: var(mediumturquoise);
+    background-color: var(rgb(55, 185, 181));
     color: var(black);
 }
 
 header {
-    background-color: var(mediumturquoise);
-    color: var(#c0d6df);
+    background-color: var(rgb(55, 185, 181));
+    color: var(whitesmoke);
     padding: 20px;
     text-align: center;
 }
@@ -34,7 +34,7 @@ header {
 
 .weather {
     padding: 20px;
-    background-color: var(mediumturquoise);
+    background-color: var(rgb(55, 185, 181));
 }
 
 .weather-info {
