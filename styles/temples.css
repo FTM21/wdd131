@@ -1,5 +1,5 @@
 body {
-    font-family: 'Your Selected Font', sans-serif; /* Remember to import Google Fonts */
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -20,7 +20,7 @@ nav {
 #nav-menu {
     list-style-type: none;
     padding: 0;
-    display: none; /
+    display: none;
 }
 
 #hamburger {
@@ -38,7 +38,6 @@ nav {
     padding: 1em;
 }
 
-/* Additional styles for your figures and captions */
 figure {
     margin: 0;
 }
@@ -46,21 +45,20 @@ figure {
 /* Use media queries */
 @media (min-width: 768px) {
     #nav-menu {
-        display: flex; /* Show menu in larger screens */
+        display: flex;
     }
-    
+
     .grid-container {
         grid-template-columns: repeat(3, 1fr); /* Three columns in larger view */
     }
+
     nav a {
         color: whitesmoke;
         text-decoration: none;
         padding: 10px;
     }
-    
+
     nav a:hover {
-        background-color: #555; 
+        background-color: #555;
     }
-
-
 }

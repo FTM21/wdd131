@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geneva, Switzerland</title>
+    <link rel="stylesheet" href="place/styles.css">
+    <script src="place/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Geneva, Switzerland</h1>
+    </header>
+    <main>
+        <section class="hero">
+            <img src="assets/hero.webp" 
+                 srcset="assets/hero.webp 400w,
+                         assets/hero.webp 800w,
+                         assets/hero.webp 1200w" 
+                 sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px" 
+                 alt="Lake Geneva">
+        </section>
+
+        <section class="information">
+            <h2>About Geneva</h2>
+            <p> Stunning Lake Geneva, nestled between Switzerland and France, features crystalline waters, Alps reflections, UNESCO vineyards, charming towns, sailing, and hiking.</p>
+        </section>
+
+        <section class="weather">
+            <h2>Weather ⛅</h2>
+            <div class="weather-info">
+                <div id="wind-chill"></div>
+                <img src="assets/weather.svg" alt="Weather Icon" class="weather-icon">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© <span id="current-year"></span> | Francisca Maxinho | Last modified: <span id="last-modified"></span></p>
+    </footer>
+</body>
+</html>
