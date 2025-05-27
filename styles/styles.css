@@ -9,16 +9,16 @@
 }
 
 body {
-    font-family: var('Roboto', sans-serif);
+    font-family: var(--body-font);
     margin: 0;
     padding: 0;
-    background-color: var(mediumturquoise);
-    color: var(black);
+    background-color: var(--primary-color);
+    color: var(--dark-color);
 }
 
 header {
-    background-color: var(mediumturquoise);
-    color: var(#c0d6df);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     padding: 20px;
     text-align: center;
 }
@@ -34,7 +34,7 @@ header {
 
 .weather {
     padding: 20px;
-    background-color: var(mediumturquoise);
+    background-color: var(--primary-color);
 }
 
 .weather-info {
