@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Roboto:wght@400&display=swap" rel="stylesheet">
-    <script src="scripts/script.js" defer></script>
+    <script src="scripts/scripts.js" defer></script>
 </head>
 <body>
     <header>
@@ -19,9 +19,7 @@
     <main>
         <section class="hero">
             <img src="assets/hero.webp" 
-                 srcset="assets/hero.webp 400w,
-                         assets/hero.webp 800w,
-                         assets/hero.webp 1200w" 
+                 srcset="assets/hero.webp 1200w,"
                  sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px" 
                  alt="Lake Geneva">
         </section>
@@ -29,12 +27,35 @@
         <section class="information">
             <h2>About Geneva</h2>
             <p> Stunning Lake Geneva, nestled between Switzerland and France, features crystalline waters, Alps reflections, UNESCO vineyards, charming towns, sailing, and hiking.</p>
+
+            <!-- Data Information Section -->
+            <h3>Data</h3>
+            <ul class="data-info">
+                <li><strong>Area:</strong> 582 km²</li>
+                <li><strong>Population:</strong> 200,000</li>
+                <li><strong>Languages:</strong> French, English</li>
+                <li><strong>Currency:</strong> Swiss Franc (CHF)</li>
+                <li><strong>Timezone:</strong> Central European Time (CET)</li>
+                <li><strong>Calling Code:</strong> +41</li>
+                <li><strong>Internet TLD:</strong> .ch</li>
+            </ul>
         </section>
 
         <section class="weather">
-            <h2>Weather ⛅</h2>
+            <h2>Weather Information ⛅</h2>
             <div class="weather-info">
-                <div id="wind-chill"></div>
+                <div class="weather-detail">
+                    <strong>Temperature:</strong> <span id="temperature">45°F</span>
+                </div>
+                <div class="weather-detail">
+                    <strong>Conditions:</strong> <span id="conditions">Sunny</span>
+                </div>
+                <div class="weather-detail">
+                    <strong>Wind Speed:</strong> <span id="wind-speed">10 mph</span>
+                </div>
+                <div class="weather-detail">
+                    <strong>Wind Chill:</strong> <span id="wind-chill">N/A</span>
+                </div>
                 <img src="assets/weather.svg" alt="Weather Icon" class="weather-icon">
             </div>
         </section>
