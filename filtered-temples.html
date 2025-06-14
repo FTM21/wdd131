@@ -6,8 +6,193 @@
     <meta name="author" content="Francisca Maxinho">
     <meta name="description" content="Explore stunning temple photos from around the world in the Temple Album, showcasing architectural beauty and cultural significance.">
     <title>Temple Album</title>
-    <link rel="stylesheet" href="styles/temples.css">
-    <script src="scripts/temples.js" defer></script>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: navy;
+            color: whitesmoke;
+            padding: 1em;
+        }
+
+        header h1 {
+            margin: 0;
+            text-align: center;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1em;
+        }
+
+        #nav-menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: navy;
+            z-index: 1000;
+        }
+
+        #nav-menu.show {
+            display: flex;
+        }
+
+        #nav-menu li {
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        #nav-menu a {
+            color: whitesmoke;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        #nav-menu a:hover,
+        #nav-menu a.active {
+            background-color: #555;
+        }
+
+        #hamburger {
+            background: none;
+            border: none;
+            color: whitesmoke;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        main {
+            padding: 2em 1em;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #temples {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 2em;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card h2 {
+            color: navy;
+            margin: 0;
+            padding: 15px 20px 10px;
+            font-size: 1.4em;
+        }
+
+        .card p {
+            margin: 5px 0;
+            padding: 0 20px;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .card p:last-child {
+            padding-bottom: 20px;
+        }
+
+        footer {
+            background-color: navy;
+            color: whitesmoke;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        .filter-title {
+            text-align: center;
+            color: navy;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-transform: capitalize;
+        }
+
+        /* Media Queries for responsive design */
+        @media (min-width: 768px) {
+            nav {
+                position: relative;
+            }
+
+            #nav-menu {
+                display: flex !important;
+                flex-direction: row;
+                position: static;
+                background-color: transparent;
+            }
+
+            #nav-menu li {
+                border-bottom: none;
+            }
+
+            #nav-menu a {
+                padding: 10px 15px;
+                border-radius: 5px;
+                margin: 0 5px;
+            }
+
+            #hamburger {
+                display: none;
+            }
+
+            #temples {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            #temples {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            #temples {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -15,25 +200,216 @@
         <nav id="nav">
             <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
             <ul id="nav-menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Old</a></li>
-                <li><a href="#">New</a></li>
-                <li><a href="#">Large</a></li>
-                <li><a href="#">Small</a></li>
+                <li><a href="#" data-filter="all" class="active">Home</a></li>
+                <li><a href="#" data-filter="old">Old</a></li>
+                <li><a href="#" data-filter="new">New</a></li>
+                <li><a href="#" data-filter="large">Large</a></li>
+                <li><a href="#" data-filter="small">Small</a></li>
             </ul>
         </nav>
     </header>
+    
     <main>
-        
+        <h2 id="filter-title" class="filter-title">All Temples</h2>
+        <div id="temples"></div>
     </main>
+    
     <footer>
-        <p>&copy; <span id="current-year"></span> Francisca Maxinho</p>
-        <p>Last Modified: <span id="last-modified"></span></p>
+        <p>&copy; <span id="year"></span> Francisca Maxinho</p>
+        <p>Last Modified: <span id="modified"></span></p>
     </footer>
 
     <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-        document.getElementById('last-modified').textContent = document.lastModified;
+        // Temple data
+        const temples = [
+            {
+                name: "Salt Lake Temple",
+                location: "Salt Lake City, Utah",
+                dedicated: "1893, April, 6",
+                area: 253000,
+                image: "https://assets.churchofjesuschrist.org/b0/05/b005e16c7d1fa7c2dc7d39d76a35b41c3c6ad57d/salt_lake_temple_lds.jpeg"
+            },
+            {
+                name: "Washington D.C. Temple",
+                location: "Bothell, Washington",
+                dedicated: "1975, November, 19",
+                area: 160000,
+                image: "https://assets.churchofjesuschrist.org/a1/83/a183f18635dc2008d8fe0a6f937deac10ec840c0/washington_dc_temple.jpg"
+            },
+            {
+                name: "Los Angeles Temple",
+                location: "Los Angeles, California",
+                dedicated: "2000, April, 13",
+                area: 384000,
+                image: "https://assets.churchofjesuschrist.org/a2/69/a26964a19238c2b0b95affe761c502a75ff8c4e8/los_angeles_temple.jpg"
+            },
+            {
+                name: "Houston Texas Temple",
+                location: "Houston, Texas",
+                dedicated: "2000, June, 18",
+                area: 118000,
+                image: "https://assets.churchofjesuschrist.org/3f/8e/3f8e6e470b0d1305173affb47a14e8bd51a992f5/houston_texas_temple.jpg"
+            },
+            {
+                name: "Palmyra New York Temple",
+                location: "Palmyra, New York",
+                dedicated: "2000, April, 6",
+                area: 25000,
+                image: "https://assets.churchofjesuschrist.org/6d/94/6d945f68256b1ed053d963f610b2f639f02e61ae/palmyra_new_york_temple.jpg"
+            },
+            {
+                name: "Mesa Arizona Temple",
+                location: "Mesa, Arizona",
+                dedicated: "1927, November, 23",
+                area: 150000,
+                image: "https://assets.churchofjesuschrist.org/16/6f/166f087ff40c4488a4b32c4936bebf1ee71b46c1/mesa_arizona_temple.jpg"
+            },
+            {
+                name: "Orlando Florida Temple",
+                location: "Orlando, Florida",
+                dedicated: "1994, October, 9",
+                area: 26500,
+                image: "https://assets.churchofjesuschrist.org/65/39/6539cc6fc7522c5c321ef5403d657cb9fcec68c2/orlando_florida_temple.jpg"
+            },
+            {
+                name: "San Diego California Temple",
+                location: "San Diego, California",
+                dedicated: "1993, April, 13",
+                area: 160000,
+                image: "https://assets.churchofjesuschrist.org/8b/b7/8bb7e36c6e4c0036f5edc792d5c05c9cbac401b6/san_diego_california_temple.jpg"
+            },
+            {
+                name: "Kona Hawaii Temple",
+                location: "Kona, Hawaii",
+                dedicated: "2000, June, 4",
+                area: 26000,
+                image: "https://assets.churchofjesuschrist.org/35/73/3573a33ae95cc3bb4749c6ce48b1bab37c6fbfbd/kona_hawaii_temple.jpg"
+            },
+            {
+                name: "Vancouver Canada Temple",
+                location: "Langley, British Columbia, Canada",
+                dedicated: "1985, April, 20",
+                area: 14700,
+                image: "https://assets.churchofjesuschrist.org/24/c5/24c541c3be5ad1c688b9c3ba3e7c22e84a8eb63e/vancouver_canada_temple.jpg"
+            },
+            {
+                name: "Oquirrh Mountain Utah Temple",
+                location: "South Jordan, Utah",
+                dedicated: "2009, December, 13",
+                area: 102000,
+                image: "https://assets.churchofjesuschrist.org/4b/f2/4bf203791a90948130dbe4c17158b047ee2f6fd8/oquirrh_mountain_utah_temple.jpg"
+            },
+            {
+                name: "Saratoga Springs Utah Temple",
+                location: "Saratoga Springs, Utah",
+                dedicated: "2019, February, 16",
+                area: 25500,
+                image: "https://assets.churchofjesuschrist.org/2b/b0/2bb08758cd6b1e9f42acc5c7cde0eef0926602ca/saratoga_springs_utah_temple.jpg"
+            },
+            {
+                name: "Pocatello Idaho Temple",
+                location: "Pocatello, Idaho",
+                dedicated: "2017, November, 19",
+                area: 8000,
+                image: "https://assets.churchofjesuschrist.org/5a/5c/5a5ca88af8f6c1b3b00b40f5c8af08f6ae001d38/pocatello_idaho_temple.jpg"
+            }
+        ];
+
+        // Function to generate temple cards
+        function createTempleCard(temple) {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <img src="${temple.image}" alt="${temple.name}" loading="lazy">
+                <h2>${temple.name}</h2>
+                <p><strong>Location:</strong> ${temple.location}</p>
+                <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
+                <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
+            `;
+            return card;
+        }
+
+        // Function to render temples based on filter
+        function renderTemples(filter) {
+            const templesContainer = document.getElementById('temples');
+            const filterTitle = document.getElementById('filter-title');
+            templesContainer.innerHTML = '';
+            
+            let filteredTemples = [];
+            let titleText = '';
+
+            switch(filter) {
+                case 'old':
+                    filteredTemples = temples.filter(temple => {
+                        const year = parseInt(temple.dedicated.split(',')[0]);
+                        return year < 1900;
+                    });
+                    titleText = 'Old Temples';
+                    break;
+                case 'new':
+                    filteredTemples = temples.filter(temple => {
+                        const year = parseInt(temple.dedicated.split(',')[0]);
+                        return year > 2000;
+                    });
+                    titleText = 'New Temples';
+                    break;
+                case 'large':
+                    filteredTemples = temples.filter(temple => temple.area > 90000);
+                    titleText = 'Large Temples';
+                    break;
+                case 'small':
+                    filteredTemples = temples.filter(temple => temple.area < 10000);
+                    titleText = 'Small Temples';
+                    break;
+                default:
+                    filteredTemples = temples;
+                    titleText = 'All Temples';
+            }
+
+            filterTitle.textContent = titleText;
+
+            filteredTemples.forEach(temple => {
+                const card = createTempleCard(temple);
+                templesContainer.appendChild(card);
+            });
+        }
+
+        // Hamburger menu functionality
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.toggle('show');
+        }
+
+        // Event listeners
+        document.getElementById('hamburger').addEventListener('click', toggleMenu);
+
+        // Navigation event listeners
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('nav a').forEach(l => l.classList.remove('active'));
+                
+                // Add active class to clicked link
+                e.target.classList.add('active');
+                
+                // Get filter and render temples
+                const filter = e.target.getAttribute('data-filter');
+                renderTemples(filter);
+                
+                // Close mobile menu if open
+                const menu = document.getElementById('nav-menu');
+                menu.classList.remove('show');
+            });
+        });
+
+        // Update footer with current year and last modified date
+        document.querySelector('#year').textContent = new Date().getFullYear();
+        document.querySelector('#modified').textContent = document.lastModified;
+
+        // Initial render of all temples
+        renderTemples('all');
     </script>
 </body>
 </html>
