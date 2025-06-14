@@ -69,7 +69,7 @@ const temples = [
         area: 14700,
         image: "https://assets.churchofjesuschrist.org/24/c5/24c541c3be5ad1c688b9c3ba3e7c22e84a8eb63e/vancouver_canada_temple.jpg"
     },
-    // Additional temples
+    
     {
         name: "Oquirrh Mountain Utah Temple",
         location: "South Jordan, Utah",
@@ -93,7 +93,7 @@ const temples = [
     },
 ];
 
-// Function to generate temple cards
+
 function createTempleCard(temple) {
     const card = document.createElement('div');
     card.className = 'card';
@@ -126,7 +126,7 @@ function renderTemples(filter) {
     });
 }
 
-// Event listeners for navigation items
+
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -135,9 +135,9 @@ document.querySelectorAll('nav a').forEach(link => {
     });
 });
 
-// Update footer with current year and last modified date
+
 document.querySelector('#year').textContent = new Date().getFullYear();
 document.querySelector('#modified').textContent = document.lastModified;
 
-// Initial render of all temples
+
 renderTemples('all');
