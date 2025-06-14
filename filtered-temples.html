@@ -3,26 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filtered Temples</title>
-    <link rel="stylesheet" href="styles/styles1.css">
-    <script defer src="scripts/script1.js"></script>
+    <meta name="author" content="Francisca Maxinho">
+    <meta name="description" content="Explore stunning temple photos from around the world in the Temple Album, showcasing architectural beauty and cultural significance.">
+    <title>Temple Album</title>
+    <link rel="stylesheet" href="styles/temples.css">
+    <script src="scripts/temples.js" defer></script>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#" data-filter="all">Home</a></li>
-                <li><a href="#" data-filter="old">Old</a></li>
-                <li><a href="#" data-filter="new">New</a></li>
-                <li><a href="#" data-filter="large">Large</a></li>
-                <li><a href="#" data-filter="small">Small</a></li>
+        <h1>Temple Album</h1>
+        <nav id="nav">
+            <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+            <ul id="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Old</a></li>
+                <li><a href="#">New</a></li>
+                <li><a href="#">Large</a></li>
+                <li><a href="#">Small</a></li>
             </ul>
         </nav>
     </header>
-    <main id="temples"></main>
+    <main>
+        
+    </main>
     <footer>
-        <p>&copy; <span id="year"></span> | Temple Cards Project</p>
-        <p>Last modified: <span id="modified"></span></p>
+        <p>&copy; <span id="current-year"></span> Francisca Maxinho</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
     </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.getElementById('last-modified').textContent = document.lastModified;
+    </script>
 </body>
 </html>
