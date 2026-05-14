@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 231 - Dynamic Web Fundamentals - Francisca Maxinho</title>
+    <meta name="description"
+        content="This website I am building for WDD231 has a little information about me, Francisca Maxinho, and where I live.">
+    <meta name="author" content="Francisca Maxinho">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <script src="scripts/getDates.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <span id="course-title">WDD231 - Dynamic Web Fundamentals</span>
+        <nav>
+            <a href="https://www.linkedin.com/in/francisca-maxinho/">LinkedIn</a>
+            <a href="https://byupw.instructure.com/">Canvas</a>
+            <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/2?lang=eng&id=p22#p22">Scripture</a>
+            <a href="final-project">Final Project</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Francisca Maxinho</h1>
+        <div class="cards-container">
+            <section class="card">
+                <h2>About Me</h2>
+                <img src="images/lux-logo.png" alt="Francisca Maxinho" class="float-right">
+                <p>My name is Francisca Maxinho. I am a Software Developer lover, passionate about Python and interested in Database. I enjoy building dynamic web applications and learning new technologies every day.</p>
+                <h3>Luxembourg — The Flagship of Europe</h3>
+                <img src="images/lux-flag.jpg" alt="Luxembourg Flag" class="float-left">
+                <p>Luxembourg is a small yet powerful country in Western Europe, known as a global financial hub and a flagship of innovation. With its rich history, multilingual culture, and stunning landscapes, it stands as a symbol of unity and progress. The country blends medieval fortresses with modern architecture, making it a unique place to explore and call home.</p>
+                <div class="clearfix"></div>
+            </section>
+            <section class="card">
+                <h2>Web Dev Resources</h2>
+                <ul>
+                    <li><a href="https://dev.to">Dev.to Community</a></li>
+                    <li><a href="https://www.smashingmagazine.com">Smashing Magazine</a></li>
+                    <li><a href="https://css-tricks.com">CSS Tricks</a></li>
+                    <li><a href="https://www.w3schools.com">W3 Schools</a></li>
+                    <li><a href="https://www.python.org">Python.org</a></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&#169; 2026 ☘️ <span id="currentyear"></span> Francisca Maxinho ☘️ Luxembourg</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>
