@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Temple Album - A collection of beautiful LDS temple photographs">
+    <meta name="author" content="WDD131 Francisca Maxinho">
+    <title>Temple Album</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS: Mobile First -->
+    <link rel="stylesheet" href="styles/temples.css">
+    <link rel="stylesheet" href="styles/temples-large.css">
+
+    <!-- JavaScript (deferred) -->
+    <script src="scripts/temples.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Temple Album</h1>
+        <button id="hamburger" aria-label="Toggle navigation menu">&#9776;</button>
+        <nav id="navMenu">
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Old</a></li>
+                <li><a href="#">New</a></li>
+                <li><a href="#">Large</a></li>
+                <li><a href="#">Small</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Welcome to the Temple Album</h2>
+        <div class="gallery">
+            <figure>
+                <img src="images/utahtemple.jpg" alt="Salt Lake Temple" loading="lazy" width="400" height="300">
+                <figcaption>Salt Lake Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/ghanatemple.jpg" alt="Aba Nigeria Temple" loading="lazy" width="400" height="300">
+                <figcaption>Aba Nigeria Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/mexicotemple.jpg" alt="Provo City Center Temple" loading="lazy" width="400" height="300">
+                <figcaption>Provo City Center Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/californiatemple.jpg" alt="Medford Oregon Temple" loading="lazy" width="400" height="300">
+                <figcaption>Medford Oregon Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/berntemple.jpg" alt="Vancouver British Columbia Temple" loading="lazy" width="400" height="300">
+                <figcaption>Vancouver British Columbia Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/atlantatemple.jpg" alt="Raleigh North Carolina Temple" loading="lazy" width="400" height="300">
+                <figcaption>Raleigh North Carolina Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/adelaideaustralia.jpg" alt="Adelaide Australia Temple" loading="lazy" width="400" height="300">
+                <figcaption>Adelaide Australia Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/albertacanadatemple.jpg" alt="Edmonton Alberta Temple" loading="lazy" width="400" height="300">
+                <figcaption>Edmonton Alberta Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/argentinatemple11.jpg" alt="Guatemala City Guatemala Temple" loading="lazy" width="400" height="300">
+                <figcaption>Guatemala City Guatemala Temple</figcaption>
+            </figure>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> WDD131 Francisca Maxinho | Temple Album</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>

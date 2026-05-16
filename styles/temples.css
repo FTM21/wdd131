@@ -1,0 +1,182 @@
+/* ===== temples.css - Mobile-First Styles ===== */
+
+/* ---------- CSS Variables / Color Scheme ---------- */
+:root {
+    --primary-color: #1B365D;
+    --primary-light: #2C4C7E;
+    --accent-color: #C9A96E;
+    --accent-light: #E8D5B7;
+    --bg-color: #F5F0EB;
+    --text-color: #2C2C2C;
+    --white: #FFFFFF;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'Lato', Arial, sans-serif;
+}
+
+/* ---------- Reset & Base ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+}
+
+/* ---------- Header ---------- */
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 2%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+header span {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+/* ---------- Hamburger Button (mobile only) ---------- */
+#hamburger {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+}
+
+#hamburger:hover {
+    opacity: 0.85;
+}
+
+/* ---------- Navigation (Mobile: hidden by default) ---------- */
+nav {
+    flex-basis: 100%;
+    display: none;
+    margin-top: 1rem;
+}
+
+nav.show {
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+nav ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+nav ul li:last-child {
+    border-bottom: none;
+}
+
+nav ul li a {
+    display: block;
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.85rem 1rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+/* Hover effect on navigation */
+nav ul li a:hover {
+    background-color: var(--primary-light);
+    padding-left: 1.5rem;
+}
+
+nav ul li a.active {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+/* ---------- Main ---------- */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+main h1 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--accent-light);
+    padding-bottom: 0.5rem;
+}
+
+/* ---------- Gallery Grid (Mobile: 1 column) ---------- */
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+figure {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+figure:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+figcaption {
+    text-align: center;
+    padding: 0.85rem 1rem;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    background-color: var(--accent-light);
+}
+
+/* ---------- Footer ---------- */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.95rem;
+}
+
+footer p {
+    margin: 0.25rem 0;
+}
+
+footer #lastModified {
+    color: var(--accent-light);
+    font-size: 0.85rem;
+}
