@@ -1,26 +1,19 @@
-// ===== temples.js - Hamburger Menu & Footer Dates =====
 
-/* ---------- Hamburger Menu Toggle ---------- */
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
 
 hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('show');
-    hamburger.classList.toggle('open');
+    const isOpen = navMenu.classList.contains('show');
 
-    // Swap hamburger symbol and X
-    if (hamburger.classList.contains('open')) {
-        hamburger.innerHTML = '&#10005;'; // ✕ (X symbol)
-    } else {
-        hamburger.innerHTML = '&#9776;';  // ☰ (hamburger)
-    }
+    // Swap hamburger ☰ and close ✕ symbols
+    hamburger.innerHTML = isOpen ? '&#10005;' : '&#9776;';
 });
+
 
 /* ---------- Footer: Current Year ---------- */
 const currentYearSpan = document.getElementById('currentYear');
-const now = new Date();
-currentYearSpan.textContent = now.getFullYear();
+currentYearSpan.textContent = new Date().getFullYear();
 
-/* ---------- Footer: Last Modified Date ---------- */
-const lastModifiedPara = document.getElementById('lastModified');
-lastModifiedPara.textContent = `Last Modified: ${document.lastModified}`;
+const lastModifiedDateSpan = document.getElementById('lastModifiedDate');
+lastModifiedDateSpan.textContent = document.lastModified;
