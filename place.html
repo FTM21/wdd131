@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WDD 131 – Francisca Maxinho. A country page about Luxembourg – the Grand Duchy at the heart of Europe.">
+  <meta name="author" content="Francisca Maxinho">
+  <title>Luxembourg – Grand Duchy of Europe | WDD 131</title>
+  <link rel="stylesheet" href="styles/place.css">
+  <script src="scripts/place.js" defer></script>
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header>
+    <h1>🇱🇺 Luxembourg</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="https://www.visitluxembourg.com" target="_blank">Visit Luxembourg</a>
+      <a href="https://www.gouvernement.lu/en.html" target="_blank">Government</a>
+    </nav>
+  </header>
+
+  <div class="flag-stripe" aria-hidden="true">
+    <div></div><div></div><div></div>
+  </div>
+
+  <div class="hero">
+    <picture>
+      <source
+        media="(min-width: 680px)"
+        srcset="images/luxembourg-wide.webp"
+        type="image/webp">
+      <!-- Mobile: portrait/square crop -->
+      <img
+        src="images/luxembourg-mobile.webp"
+        srcset="images/luxembourg-mobile.webp 600w, images/luxembourg-wide.webp 1200w"
+        sizes="(min-width: 680px) 100vw, 100vw"
+        alt="Panoramic view of Luxembourg City's historic Alzette valley and Bock Casemates"
+        width="1200"
+        height="520"
+        loading="eager">
+    </picture>
+    <div class="hero-caption">
+      <h2>Grand Duchy of Luxembourg</h2>
+      <p>Europe's best-kept secret — a jewel of castles, culture &amp; prosperity.</p>
+    </div>
+  </div>
+
+  <main class="page-content">
+
+    <section class="card card-about">
+      <h2>About Luxembourg</h2>
+      <p>
+        Luxembourg — officially the <strong>Grand Duchy of Luxembourg</strong> — is a small but
+        extraordinary country nestled between Belgium, France, and Germany. Despite being one of
+        the world's smallest nations, it is among the wealthiest per capita, home to the
+        headquarters of the European Court of Justice, and a founding member of the European Union.
+        Its capital, <strong>Luxembourg City</strong>, is a UNESCO World Heritage Site, famed for
+        its dramatic Alzette valley, medieval fortifications, and the remarkable underground
+        network of the <em>Bock Casemates</em>.
+      </p>
+      <p style="margin-top:0.75rem;">
+        Luxembourg is a trilingual nation — Luxembourgish, French, and German are all official
+        languages. Its landscape transitions from the rolling <strong>Ardennes</strong> forest in
+        the north to the wine-producing Moselle valley in the east, offering visitors stunning
+        nature alongside rich cultural history.
+      </p>
+
+      <dl class="facts-grid">
+        <div class="fact">
+          <dt>Capital</dt>
+          <dd>Luxembourg City</dd>
+        </div>
+        <div class="fact">
+          <dt>Population</dt>
+          <dd>~660,000</dd>
+        </div>
+        <div class="fact">
+          <dt>Area</dt>
+          <dd>2,586 km²</dd>
+        </div>
+        <div class="fact">
+          <dt>Languages</dt>
+          <dd>Luxembourgish, French, German</dd>
+        </div>
+        <div class="fact">
+          <dt>Currency</dt>
+          <dd>Euro (€)</dd>
+        </div>
+        <div class="fact">
+          <dt>Government</dt>
+          <dd>Constitutional Monarchy</dd>
+        </div>
+        <div class="fact">
+          <dt>EU Member</dt>
+          <dd>Since 1957</dd>
+        </div>
+        <div class="fact">
+          <dt>Known For</dt>
+          <dd>Finance, Castles, Forests</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- Gallery card -->
+    <section class="card">
+      <h2>Places to See</h2>
+      <div class="gallery">
+        <figure>
+          <img src="images/vianden.webp" alt="Vianden Castle perched above the Our River valley" loading="lazy">
+          <figcaption>Vianden Castle</figcaption>
+        </figure>
+        <figure>
+          <img src="images/moselle.webp" alt="Moselle River vineyards at golden hour" loading="lazy">
+          <figcaption>Moselle Valley</figcaption>
+        </figure>
+        <figure>
+          <img src="images/casemates.webp" alt="Bock Casemates underground tunnels in Luxembourg City" loading="lazy">
+          <figcaption>Bock Casemates</figcaption>
+        </figure>
+        <figure>
+          <img src="images/muellerthal.webp" alt="Müllerthal rocky forest trail, the Little Switzerland of Luxembourg" loading="lazy">
+          <figcaption>Müllerthal Trail</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Weather card -->
+    <section class="card weather-card">
+
+      <!-- Mobile heading (visible on mobile only) -->
+      <h2 class="mobile-h2">
+        <img
+          src="images/weather-icon.svg"
+          alt="Snowy weather icon"
+          class="weather-icon-mobile"
+          width="64"
+          height="64">
+        Weather
+      </h2>
+
+      <!-- Wide heading with pseudo-element emoticon -->
+      <h2 class="weather-heading-wide">Weather</h2>
+
+      <div class="weather-grid">
+        <!-- Mobile: icon + stats side by side -->
+        <div></div><!-- empty col placeholder handled by CSS -->
+        <dl class="weather-stats">
+          <div class="weather-stat">
+            <dt>Temperature</dt>
+            <dd>28°F / -2°C</dd>
+          </div>
+          <div class="weather-stat">
+            <dt>Wind Speed</dt>
+            <dd>12 mph</dd>
+          </div>
+          <div class="weather-stat">
+            <dt>Conditions</dt>
+            <dd>Light Snow</dd>
+          </div>
+          <div class="weather-stat">
+            <dt>Wind Chill</dt>
+            <dd id="wind-chill">Calculating…</dd>
+          </div>
+        </dl>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <p>
+      &copy; <span id="currentyear"></span> &nbsp;|&nbsp;
+      Francisca Maxinho &nbsp;|&nbsp; Luxembourg
+    </p>
+    <p id="lastModified"></p>
+  </footer>
+
+</body>
+</html>
