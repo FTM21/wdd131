@@ -1,0 +1,57 @@
+/* ===================================================
+   temples-large.css – Larger Screen Overrides
+   Applied on top of temples.css at ≥ 768px
+   =================================================== */
+
+   @media screen and (min-width: 768px) {
+
+    /* ---------- Header: single-row ---------- */
+    header {
+      flex-wrap: nowrap;
+      padding: 1rem 4%;
+    }
+  
+    /* ---------- Hide Hamburger ---------- */
+    #hamburger {
+      display: none !important;
+    }
+  
+    /* ---------- Nav: always visible, horizontal ---------- */
+    nav {
+      display: block !important;
+      flex-basis: auto;
+      margin-top: 0;
+    }
+  
+    nav ul {
+      flex-direction: row;
+      gap: 0;
+    }
+  
+    nav ul li {
+      border-bottom: none;
+    }
+  
+    nav ul li a {
+      padding: 0.65rem 1.1rem;
+      font-size: 0.95rem;
+      border-radius: 4px;
+    }
+  
+    nav ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      padding-left: 1.1rem;
+    }
+  
+    /* ---------- Main heading ---------- */
+    main h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+  
+    /* ---------- Gallery: 3-column grid ---------- */
+    .gallery {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+  }
