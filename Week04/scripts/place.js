@@ -24,4 +24,6 @@ if (temperatureF <= 50 && windSpeedMph > 3) {
   windChillEl.textContent = calculateWindChill(temperatureF, windSpeedMph) + "°F";
 } else {
   windChillEl.textContent = "N/A";
+
+
 }
