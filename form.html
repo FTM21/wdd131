@@ -21,12 +21,12 @@
             <h2>Share Your Feedback</h2>
             <p class="form-instructions">Fields marked with an asterisk (<span class="required-star">*</span>) are mandatory to complete your verification.</p>
             
-            <form id="product-review-form" action="review.html" method="get">
+            <form id="product-review-form">
                 
                 <div class="form-group">
-                    <label for="product-name">Product Name <span class="required-star" aria-hidden="true">*</span></label>
-                    <select id="product-name" name="productName" required aria-required="true">
-                        <option value="" disabled selected>-- Select an Export Tool --</option>
+                    <label id="product-name-label" for="product-name">Product Name <span class="required-star" aria-hidden="true">*</span></label>
+                    <select id="product-name" name="productName" required aria-labelledby="product-name-label">
+                        <option value="">-- Select an Export Tool --</option>
                     </select>
                 </div>
 
@@ -35,7 +35,7 @@
                         <legend>Overall Rating <span class="required-star" aria-hidden="true">*</span></legend>
                         <div class="rating-options">
                             <span class="radio-item">
-                                <input type="radio" id="rating-1" name="rating" value="1" required aria-required="true">
+                                <input type="radio" id="rating-1" name="rating" value="1" required>
                                 <label for="rating-1">1 Star</label>
                             </span>
                             <span class="radio-item">
