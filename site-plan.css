@@ -1,27 +1,24 @@
-
-
-   :root {
-    --primary-color: #1e3a8a;   /* Premium Deep Corporate Blue */
-    --secondary-color: #1d4ed8; /* High Visibility Royal Blue */
-    --accent-color: #854d0e;    /* Deep Bronze Amber: High Contrast Pass */
-    --text-primary: #0f172a;    /* Obsidian Slate Dark Text: Ultimate Contrast Pass */
-    --text-secondary: #334155;  /* Deepened Subtext Slate Gray */
-    --bg-canvas: #f8fafc;       /* Muted Matte Screen Canvas */
-    --bg-card: #ffffff;         /* Pure High-Contrast White Background */
-    --border-secure: #334155;   /* High visibility input layout borders */
+:root {
+    --primary-color: #1a365d;   /* Deep Navy Blue */
+    --secondary-color: #2b6cb0; /* Steel Blue */
+    --accent-color: #b7791f;    /* Amber Gold */
+    --text-color: #2d3748;      /* Charcoal Gray */
+    --bg-color: #f7fafc;        /* Light Slate Tint */
+    --card-bg: #ffffff;         /* Pure White */
+    --border-color: #e2e8f0;    /* Muted Border Gray */
 }
 
-/* Base Optimization Rules - Prevents Cumulative Layout Shift */
+/* Base Adjustments */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.5;
-    color: var(--text-primary);
-    background-color: var(--bg-canvas);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
     margin: 0;
     padding: 0;
 }
 
-/* Banner Design Frame */
+/* Header Banner Layout */
 header {
     background-color: var(--primary-color);
     color: #ffffff;
@@ -33,173 +30,144 @@ header {
 header h1 {
     margin: 0;
     font-size: 2.2rem;
-    font-weight: bold;
+    letter-spacing: -0.5px;
 }
 
 .author-tag {
-    margin: 10px 0 0 0;
+    margin: 8px 0 0 0;
     font-size: 1.1rem;
-    color: #f1f5f9;
+    color: #e2e8f0;
     font-style: italic;
 }
 
-/* Spatial Framework Layout */
+/* Structural Main Container Layout */
 main {
-    max-width: 680px;
+    max-width: 960px;
     margin: 40px auto;
     padding: 0 20px;
     box-sizing: border-box;
 }
 
 section {
-    background: var(--bg-card);
-    border: 1px solid #cbd5e0;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 30px;
     margin-bottom: 30px;
-    contain: content; /* Drastically optimizes rendering performance times */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 h2 {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     font-size: 1.6rem;
     margin-top: 0;
-    border-bottom: 2px solid #e2e8f0;
-    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
 }
 
-.form-instructions {
-    font-size: 1rem;
-    color: var(--text-secondary);
-    margin-bottom: 24px;
-}
-
-.required-star {
-    color: #991b1b;
-    font-weight: bold;
-}
-
-.optional-tag {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-}
-
-.form-group {
-    margin-bottom: 25px;
-}
-
-label, legend {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 10px;
+h3 {
     color: var(--primary-color);
+    font-size: 1.25rem;
+    margin-top: 0;
+}
+
+p {
+    font-size: 1.05rem;
+    margin-bottom: 1.5em;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 12px;
     font-size: 1.05rem;
 }
 
-fieldset {
-    border: 2px solid var(--border-secure);
-    border-radius: 6px;
-    padding: 18px 20px;
-    margin: 0;
-}
-
-/* Form Controls Optimization */
-input[type="date"],
-select,
-textarea {
-    width: 100%;
-    min-height: 44px; /* Matches modern pointer target guidelines */
-    padding: 10px 12px;
-    border: 2px solid var(--border-secure);
-    border-radius: 4px;
-    font-family: inherit;
-    font-size: 1rem;
-    color: var(--text-primary);
-    background-color: #ffffff;
-    box-sizing: border-box;
-}
-
-input[type="date"]:focus,
-select:focus,
-textarea:focus {
-    outline: 3px solid var(--secondary-color);
-    outline-offset: 1px;
-}
-
-.rating-options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.radio-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.radio-item input[type="radio"] {
-    width: 22px;
-    height: 22px;
-    margin: 0;
-    cursor: pointer;
-}
-
-.radio-item label {
+.highlight {
+    color: var(--accent-color);
     font-weight: bold;
-    margin: 0;
-    cursor: pointer;
-    color: var(--text-primary);
 }
 
-/* Button Optimization */
-.form-actions {
-    margin-top: 35px;
-}
-
-button[type="submit"] {
-    background-color: var(--accent-color);
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    padding: 16px 32px;
-    font-size: 1.15rem;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100%;
-    min-height: 48px;
-}
-
-button[type="submit"]:hover,
-button[type="submit"]:focus {
-    background-color: #713f12;
-    outline: 4px solid var(--secondary-color);
-}
-
-/* Dashboard Metrics Box */
-.counter-card {
-    background-color: var(--bg-canvas);
-    border-left: 5px solid var(--secondary-color);
-    padding: 18px 22px;
+/* User Journey Scenario Layout Boxes */
+.scenario-box {
+    background-color: var(--bg-color);
+    border-left: 4px solid var(--secondary-color);
+    padding: 15px 20px;
+    margin-bottom: 20px;
     border-radius: 0 6px 6px 0;
 }
 
-.counter-card p {
+.scenario-box p {
     margin: 0;
-    font-size: 1.1rem;
 }
 
-footer {
+.scenario-box .question {
+    font-style: italic;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.scenario-box .answer {
+    font-size: 1rem;
+}
+
+/* Visual Color Swatch Utilities */
+.swatch {
+    display: inline-block;
+    width: 24px;
+    height: 14px;
+    border-radius: 3px;
+    vertical-align: middle;
+    margin-right: 8px;
+    border: 1px solid #cbd5e0;
+}
+
+.sw-primary { background-color: var(--primary-color); }
+.sw-secondary { background-color: var(--secondary-color); }
+.sw-accent { background-color: var(--accent-color); }
+.sw-text { background-color: var(--text-color); }
+.sw-bg { background-color: var(--bg-color); }
+
+/* Responsive Grid Configuration for Wireframe Cards */
+.wireframe-flex-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.wireframe-card {
+    flex: 1;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 20px;
     text-align: center;
-    padding: 35px 20px;
-    background-color: var(--primary-color);
-    color: #ffffff;
-    margin-top: 60px;
+}
+
+.wireframe-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.15rem;
+}
+
+svg {
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
 }
 
 @media (min-width: 768px) {
-    button[type="submit"] {
-        width: auto;
-        min-width: 220px;
+    .wireframe-flex-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    
+    .wireframe-card svg {
+        max-width: 100%;
     }
 }
